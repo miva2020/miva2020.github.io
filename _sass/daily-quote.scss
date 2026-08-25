@@ -1,0 +1,29 @@
+// ============================================================
+// _sass/daily-quote.scss — 每日治愈短句区样式
+// 作用：居中显示手写体短句 + 下方日期小字。
+//       短句内容由 assets/js/daily-quote.js 按日期切换写入。
+// ============================================================
+
+.daily-quote {
+  text-align: center;
+  padding: 56px 20px;
+  margin: 16px auto;
+  max-width: 720px;
+}
+.daily-quote .quote-text {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--text);
+  margin-bottom: 16px;
+  word-break: break-word;
+  min-height: 3em;   // 避免短句加载前布局抖动
+}
+.daily-quote .quote-date {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .daily-quote .quote-text { font-size: 1.6rem; }
+}

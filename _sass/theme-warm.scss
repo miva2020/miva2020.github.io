@@ -1,0 +1,19 @@
+// ============================================================
+// _sass/theme-warm.scss — 奶油暖阳主题变量（默认主题）
+// 作用：定义 :root[data-theme="warm"] 下全部颜色 CSS 变量。
+// 被 assets/css/style.scss 通过 @import "theme-warm" 引入。
+// ============================================================
+
+:root[data-theme="warm"] {
+  --bg:           #FFF8F0;                          // 暖白背景
+  --card-bg:      #FFFFFF;                          // 卡片背景
+  --text:         #5D4037;                          // 主文字 深棕
+  --text-muted:   #8D6E63;                          // 次要文字
+  --accent:       #FF8A65;                          // 强调色/按钮 珊瑚橙
+  --tag-bg:       #FFE0B2;                          // 标签背景
+  --border:       rgba(93, 64, 55, 0.1);           // 边框/阴影基色
+  --shadow:       0 2px 8px rgba(93, 64, 55, 0.08);
+  --shadow-hover: 0 8px 24px rgba(93, 64, 55, 0.16);
+  --nav-bg:       rgba(255, 248, 240, 0.7);         // 导航栏毛玻璃背景
+  --avatar-grad:  linear-gradient(135deg, #FF8A65, #FFE0B2);
+}

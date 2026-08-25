@@ -1,0 +1,54 @@
+# ============================================================================
+# _config.yml — Jekyll 站点配置
+# 作用：站点元信息、Markdown 解析器、Sass 编译、kramdown 选项、永久链接格式。
+# 兼容性：Jekyll 3.9.x（GitHub Pages 原生构建，无需 GitHub Actions）。
+# ============================================================================
+
+# ---- 站点信息 ----
+title: 我的技术笔记
+description: AI 应用开发工程师 / 电商客服 AI 提效探索者
+url: ""                       # 部署到 username.github.io 时留空或填 https://username.github.io
+baseurl: ""                   # 仓库名为 username.github.io 时留空
+
+# ---- 作者信息（供 header / footer / hero 引用）----
+author:
+  name: Maris
+  bio: AI 应用开发工程师 / 电商客服 AI 提效探索者
+  github: "https://github.com/maris"
+  wechat: "#"
+  email: "#"
+
+# ---- 默认主题：warm（奶油暖阳）/ ocean（海盐天空）----
+default_theme: warm
+
+# ---- 构建相关 ----
+markdown: kramdown
+highlighter: rouge
+theme: null                  # 不使用 Gem-based 主题，纯自定义模板
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 永久链接：/年/月/日/标题，符合中文技术博客阅读习惯
+permalink: /:year/:month/:day/:title/
+
+# kramdown 选项：允许在 Markdown 中用双空格换行
+kramdown:
+  input: GFM
+  hard_wrap: true
+
+# Sass 编译：开启，使其输出压缩版 CSS
+sass:
+  style: compressed           # 生产环境压缩；调试时改为 expanded
+  sass_dir: _sass
+
+# 排除不被 Jekyll 处理的文件
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# 文章分页（首页只显示前 3 篇，index.html 用 site.posts | limit:3）
+paginate: 5

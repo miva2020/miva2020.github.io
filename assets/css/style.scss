@@ -1,0 +1,14 @@
+---
+---
+// ============================================================
+// assets/css/style.scss — CSS 入口
+// 作用：文件顶部的 front matter（两行三横线）让 Jekyll 识别并编译输出
+//       /assets/css/style.css；下方用 @import 依次引入 _sass 下的 partial。
+// 引入顺序：先两套主题变量，再主布局，再组件卡片，最后短句区。
+// ============================================================
+
+@import "theme-warm";
+@import "theme-ocean";
+@import "main";
+@import "cards";
+@import "daily-quote";

@@ -1,0 +1,97 @@
+// ============================================================
+// _sass/cards.scss — 卡片样式（文章卡片 + 项目卡片通用）
+// 作用：圆角 12px、轻微阴影、hover 上移 2px + 阴影加深、0.3s 过渡、
+//       响应式网格（手机单列 / 平板双列 / 桌面三列）。
+// ============================================================
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-1 { grid-template-columns: 1fr; }
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+// ---- 文章卡片 ----
+.post-card .post-title {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+.post-card .post-title a { color: var(--text); }
+.post-card .post-meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+.post-card .post-excerpt {
+  color: var(--text);
+  font-size: 0.95rem;
+  flex: 1;
+  margin-bottom: 16px;
+}
+.post-card .read-more {
+  align-self: flex-start;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+// ---- 项目卡片 ----
+.project-card .project-name {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+.project-card .project-desc {
+  color: var(--text);
+  font-size: 0.95rem;
+  flex: 1;
+  margin-bottom: 16px;
+}
+.project-card .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.project-card .tag {
+  background: var(--tag-bg);
+  color: var(--text);
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.project-card .repo-btn {
+  align-self: flex-start;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.project-card .repo-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+
+// ---- 响应式：手机单列 / 平板双列 / 桌面三列 ----
+@media (max-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .grid-3, .grid-2 { grid-template-columns: 1fr; }
+}

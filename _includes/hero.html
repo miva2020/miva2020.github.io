@@ -1,0 +1,14 @@
+<!-- ============================================================
+     _includes/hero.html — 个人简介区
+     圆形头像占位（取姓名首字）+ 姓名 + 一句话介绍 + 社交链接（# 占位）。
+     ============================================================ -->
+<section class="hero container">
+  <div class="avatar" aria-hidden="true">{{ site.author.name | slice: 0 }}</div>
+  <h1>{{ site.author.name }}</h1>
+  <p class="bio">{{ site.author.bio }}</p>
+  <nav class="social" aria-label="社交链接">
+    <a href="{{ site.author.github }}" aria-label="GitHub" title="GitHub">🐙</a>
+    <a href="{{ site.author.wechat }}" aria-label="微信" title="微信">💬</a>
+    <a href="{{ site.author.email }}" aria-label="邮箱" title="邮箱">✉️</a>
+  </nav>
+</section>

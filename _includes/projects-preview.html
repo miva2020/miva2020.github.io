@@ -1,0 +1,28 @@
+<!-- ============================================================
+     _includes/projects-preview.html — 项目作品卡片列表
+     从 _data/projects.yml 读取，每张卡片：
+     名称 + 描述 + 技术栈标签（彩色小标签）+ GitHub 链接按钮。
+     添加新项目只需在 _data/projects.yml 末尾追加一项。
+     ============================================================ -->
+<section class="section container">
+  <h2 class="section-title">项目作品</h2>
+
+  {% if site.data.projects and site.data.projects.size > 0 %}
+    <div class="grid grid-2">
+      {% for project in site.data.projects %}
+        <article class="card project-card">
+          <h3 class="project-name">{{ project.name }}</h3>
+          <p class="project-desc">{{ project.description }}</p>
+          <div class="tag-list">
+            {% for tag in project.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <a class="repo-btn" href="{{ project.repo }}" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-state">暂无项目</p>
+  {% endif %}
+</section>

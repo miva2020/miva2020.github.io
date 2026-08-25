@@ -1,0 +1,22 @@
+# Jekyll 构建产物
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby / Bundler
+Gemfile.lock
+.bundle/
+vendor/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# 沙箱临时分享包
+.trae-html-share-packages/
+
+# 临时打包产物（保留磁盘文件，不入仓）
+miva2020-blog.zip
+*.zip

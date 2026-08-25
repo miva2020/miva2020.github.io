@@ -1,0 +1,28 @@
+<!-- ============================================================
+     _includes/posts-preview.html — 最新文章预览（最近 3 篇）
+     用 site.posts 循环 + limit:3 取最近 3 篇；
+     每张卡片：标题 + 日期 + 摘要（前 80 字）+ "阅读更多"链接；
+     无文章时显示"暂无文章"。
+     ============================================================ -->
+<section class="section container">
+  <h2 class="section-title">最新文章</h2>
+
+  {% if site.posts.size > 0 %}
+    <div class="grid grid-3">
+      {% for post in site.posts limit:3 %}
+        <article class="card post-card">
+          <h3 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title | default: "（无标题）" }}</a>
+          </h3>
+          <p class="post-meta">{{ post.date | date: "%Y-%m-%d" }}</p>
+          <p class="post-excerpt">
+            {{ post.excerpt | default: post.content | strip_html | truncate: 80, "…" }}
+          </p>
+          <a class="read-more" href="{{ post.url | relative_url }}">阅读更多 →</a>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-state">暂无文章</p>
+  {% endif %}
+</section>

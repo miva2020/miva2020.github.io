@@ -1,0 +1,19 @@
+// ============================================================
+// _sass/theme-ocean.scss — 海盐天空主题变量
+// 作用：定义 :root[data-theme="ocean"] 下全部颜色 CSS 变量。
+// 被 assets/css/style.scss 通过 @import "theme-ocean" 引入。
+// ============================================================
+
+:root[data-theme="ocean"] {
+  --bg:           #F0F4FF;                          // 淡蓝白背景
+  --card-bg:      #FFFFFF;                          // 卡片背景
+  --text:         #1A237E;                          // 主文字 深蓝
+  --text-muted:   #5C6BC0;                          // 次要文字
+  --accent:       #42A5F5;                          // 强调色/按钮 天蓝
+  --tag-bg:       #E3F2FD;                          // 标签背景
+  --border:       rgba(26, 35, 126, 0.1);          // 边框/阴影基色
+  --shadow:       0 2px 8px rgba(26, 35, 126, 0.08);
+  --shadow-hover: 0 8px 24px rgba(26, 35, 126, 0.16);
+  --nav-bg:       rgba(240, 244, 255, 0.7);        // 导航栏毛玻璃背景
+  --avatar-grad:  linear-gradient(135deg, #42A5F5, #E3F2FD);
+}
